@@ -1,0 +1,76 @@
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'hola',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_91a2abb5-6ddf-4683-a96c-5aacff0a1a10',
+  keyword: 'key_55139b06-847d-4f50-815b-1722a01ab0bd',
+  answer: '🙌 Hola soy Meny\n en que puedo ayudarte?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '6653ce2e66d93f252c57a2f15b97ce68'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'teengo un problema',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e53d468a-dde6-40b7-af0a-fda47a98218b',
+  keyword: 'key_7a2c77d8-6b2b-4742-b614-6309cba4ed8c',
+  answer: 'Entiendo tu problema, necesito que me envies el numero de serie ya sea en una imagen 100% legible o escribela',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '416b91f193c15faceaf42d1a9c40ee9f'
+}
+[handleMsg]:  {
+  type: 'image',
+  from: '526395494890',
+  url: 'https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=1962530840784494&ext=1699996313&hash=ATsrc1QS8U9gKmpWb5SP4v-bfRpLex9v0ljUvW9CMdULbw',
+  to: '15550933604',
+  body: '_event_media__4ba2bba0-aeda-43eb-bcf6-02335414df53',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ee4b70fd-eb2b-4ede-8c40-60fac82a32a0',
+  keyword: 'ans_e53d468a-dde6-40b7-af0a-fda47a98218b',
+  answer: 'Escribe *Soporte* para que te pueda aydar uno de nuestros tecnicos virtuales',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8335040efd5c4df8cab425ed02c5a0c5'
+}
