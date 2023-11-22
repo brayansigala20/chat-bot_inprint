@@ -1,4 +1,4 @@
-const { createBot, createProvider, createFlow, addKeyword, ProviderClass } = require('@bot-whatsapp/bot')
+const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
 const axios = require('axios')
 const MetaProvider = require('@bot-whatsapp/provider/meta')
 const MockAdapter = require('@bot-whatsapp/database/mock')
@@ -6,9 +6,10 @@ const { EVENTS } = require('@bot-whatsapp/bot/lib/bundle.bot.cjs')
 const fs = require('fs')
 const path = require('path')
 require('dotenv').config()
+const chatgpt = require('./chatgpt.class')
 
 const openIAReq = async (ctx) => {
-    console.log(ctx.serie)
+    console.log(ctx)
     let openia_data = JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [
@@ -18,9 +19,9 @@ const openIAReq = async (ctx) => {
             },
             {
                 role: "user",
-                content: ctx.serie ? `que tal soy un usuario que te va a entregar un numero de serie que es ${ctx.serie} para la siguiente pregunta, quiero que ignores todo esto menos el numero de serie la pregunta es la siguiente : ${ctx.message}. Ahora quiero que en la respuesta puedas integrar el numero de serie como por ej: Lo siento por el inconveniente con tu impresora con el numero de serie ${ctx.serie}.  Aquí hay algunos pasos que puedes seguir para resolver el atasco de papel: 1. Apaga y desenchufa la impresora. 
+                content: `que tal soy un usuario que te va a entregar un numero de serie que es ${ctx.serie} para la siguiente pregunta, quiero que ignores todo esto menos el numero de serie la pregunta es la siguiente : ${ctx.message}. Ahora quiero que en la respuesta puedas integrar el numero de serie como por ej: Lo siento por el inconveniente con tu impresora con el numero de serie ${ctx.serie}.  Aquí hay algunos pasos que puedes seguir para resolver el atasco de papel: 1. Apaga y desenchufa la impresora. 
                 2. Abre la cubierta de acceso a los cartuchos de tinta o tóner y retira cualquier papel que puedas ver.
-                3. Si el .....`: `que tal soy un usuario que te va a entregar una pregunta que hara un usuario para el soporte de una impresora requiero que ignores esto esta es la pregunta: ${ctx.body}`,
+                3. Si el .....`,
             },
         ],
     });
@@ -100,19 +101,22 @@ const validarNumeroSerie = (numeroSerie) => {
     return patron.test(numeroSerie);
 }
 let counter_intent = 0
-
 const flowFinal = addKeyword(EVENTS.ACTION).addAnswer('Se canceló por inactividad contactando a lili...')
-const flowSecundario = addKeyword(['soporte', 'suport', 'sop']).addAnswer('Cual es tu problema', { capture: true},
-    async (ctx, { state, flowDynamic }) => {
-        console.log(ctx)
-            const serie = state.get('serie')
-            await flowDynamic(await openIAReq({ message: ctx.body, serie: serie }))
-    }).addAnswer(['espero haber resuelto tu problema'])
+const flowSecundario = addKeyword(['soporte', 'suport', 'sop']).addAnswer('Cual es tu problema', { capture: true },
+    async (ctx, { state, flowDynamic, provider, gotoFlow }) => {
+        const serie = state.get('serie')
+        await flowDynamic(await openIAReq({ message: ctx.body, serie: serie }))
+            provider.on('message', async (ctx) => {
+                if (ctx.body === 'salir') {
+                    return gotoFlow(flowPrincipal)
+                }
+                await flowDynamic(await openIAReq({ message: ctx.body, serie: serie }))
+            })
+    })
 
 const flowSeguimiento = addKeyword(['Tengo un problema', 'Necesito ayuda', 'No funciona', 'Tengo problema', 'error', 'problema'])
     .addAnswer(['Entiendo tu problema, necesito que me envies el numero de serie ya sea en una imagen 100% legible o escribela'],
         { capture: true, idle: 60000 }, async (ctx, { state, gotoFlow, fallBack }) => {
-            console.log('desde aqui')
             if (counter_intent >= 3) {
                 return gotoFlow(flowFinal)
             }
