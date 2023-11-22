@@ -4,9 +4,9 @@ class ChatGptClass extends CoreClass {
     queue = []
     optionsGPT = { model: 'gpt-3.5-turbo' }
     openai = undefined
-    constructor(_database, _provider) {
-        super(null, _database, _provider)
-        this.init().then()
+    constructor(_provider) {
+        super(null, _provider)
+        _provider.init().then()
     }
     init = async () => {
         const { ChatGPTAPI } = await import("chatgpt")

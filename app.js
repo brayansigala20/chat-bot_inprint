@@ -103,15 +103,8 @@ const validarNumeroSerie = (numeroSerie) => {
 let counter_intent = 0
 const flowFinal = addKeyword(EVENTS.ACTION).addAnswer('Se canceló por inactividad contactando a lili...')
 const flowSecundario = addKeyword(['soporte', 'suport', 'sop']).addAnswer('Cual es tu problema', { capture: true },
-    async (ctx, { state, flowDynamic, provider, gotoFlow }) => {
+    async (ctx, { state }) => {
         const serie = state.get('serie')
-        await flowDynamic(await openIAReq({ message: ctx.body, serie: serie }))
-            provider.on('message', async (ctx) => {
-                if (ctx.body === 'salir') {
-                    return gotoFlow(flowPrincipal)
-                }
-                await flowDynamic(await openIAReq({ message: ctx.body, serie: serie }))
-            })
     })
 
 const flowSeguimiento = addKeyword(['Tengo un problema', 'Necesito ayuda', 'No funciona', 'Tengo problema', 'error', 'problema'])
