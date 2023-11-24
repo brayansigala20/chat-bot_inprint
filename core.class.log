@@ -1,0 +1,241 @@
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'hola',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_304adf08-f80b-4e63-9c7a-662f455b8bff',
+  keyword: 'key_ffe8d425-ac0a-4f76-bba0-06bdd53b9f68',
+  answer: '🙌 Hola soy Meny\n en que puedo ayudarte?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'b0f39960cd24f86b40b64a80e5a80c6c'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'tengo un problema',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ed232d86-f865-4296-97e8-22fc620399ed',
+  keyword: 'key_9a0eff68-d2cc-494e-8a90-5059a2adcd13',
+  answer: 'Entiendo que tienes un problema, necesito que me envies el numero de serie ya sea en una imagen 100% legible o escribela',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: 60000,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'ea56819c33ab2661956f36771da5789a'
+}
+[handleMsg]:  {
+  type: 'image',
+  from: '526395494890',
+  url: 'https://lookaside.fbsbx.com/whatsapp_business/attachments/?mid=6809897759085978&ext=1700807576&hash=ATt-fGaUNMNNhTSui5mPg0Ueauku69-HGzEfPLnyi9WYyw',
+  to: '15550933604',
+  body: '_event_media__c79ae1db-34ef-4ca9-9d5e-03c00c8e0e31',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_b0348cea-acc1-4bdd-87f8-f6ffd7511ae3',
+  keyword: 'ans_ed232d86-f865-4296-97e8-22fc620399ed',
+  answer: 'Escribe *Soporte* para que te pueda ayudar uno de nuestros tecnicos virtuales',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '770e48e08382aa96fc41fcd1faabf6b8'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'soporte',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_5fbf8987-ca1b-4c2e-8302-e98c553df303',
+  keyword: 'key_196c9e4e-09eb-42dd-ade5-698726b1b05c',
+  answer: 'Cual es tu problema?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'ed53c4c49c23b869720613631029efde'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'se apago repentinamente',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ceedb68b-c072-4bb0-9d42-2b8de70e4f9a',
+  keyword: 'ans_5fbf8987-ca1b-4c2e-8302-e98c553df303',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd05e656749187f1c9b9b1f51a0fb942b'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_7ea74603-a103-47f6-a27e-dc5320e1847c',
+  keyword: 'ans_ceedb68b-c072-4bb0-9d42-2b8de70e4f9a',
+  answer: 'resolvimos tu inconveniente? *Si* o *No*',
+  options: {
+    media: null,
+    buttons: [ [Object], [Object] ],
+    capture: true,
+    child: null,
+    delay: 7000,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '34bd17b9296ab5e5cc1d5f71e961c6a5'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'No',
+  title_button_reply: 'No',
+  title_list_reply: undefined,
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_96b32da0-86bf-4701-b98f-2309291b0c84',
+  keyword: 'key_2b141128-15d8-44a6-9e8a-5a73f5aa19c6',
+  answer: 'veamos de nuevo, Cual es tu problema?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'fabe4b38ea079d19efb22a78a127d120'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'ya funciono pero no quiere imprimir',
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_5649229c-871e-4715-8f4e-fef64f2f1316',
+  keyword: 'ans_96b32da0-86bf-4701-b98f-2309291b0c84',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '17da02107888cb6c84eb0993f5a39d45'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_11961f20-9ef8-4ae5-974e-3077d2b785f8',
+  keyword: 'ans_5649229c-871e-4715-8f4e-fef64f2f1316',
+  answer: 'resolvimos tu inconveniente? *Si* o *No*',
+  options: {
+    media: null,
+    buttons: [ [Object], [Object] ],
+    capture: true,
+    child: null,
+    delay: 7000,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '0fef607230f669bc6c1283818fe889ec'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '526395494890',
+  to: '15550933604',
+  body: 'Ayuda Humana',
+  title_button_reply: 'Ayuda Humana',
+  title_list_reply: undefined,
+  pushName: 'Brayan Sigala'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_177c88ed-051c-4a81-a38a-f442cd096f14',
+  keyword: 'key_a5447448-c0b8-48fa-974e-65bc174162c3',
+  answer: 'contactando a lili',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'db4997878f1469663481627cde6903e3'
+}
